@@ -35,12 +35,6 @@ export default function Story() {
     setCurrentSceneIndex((prev) => prev + 1);
   };
 
-  const prevScene = () => {
-    if (currentSceneIndex === 0) return;
-    setCurrentSubtitleIndex(0);
-    setCurrentSceneIndex((prev) => prev - 1);
-  };
-
   const nextSubtitle = () => {
     if (!scenes[currentSceneIndex]) return;
 
@@ -91,8 +85,8 @@ export default function Story() {
       <LogoHome />
       <ComicLoader
         imageSrc={currentScene.image_src}
-        onPrev={prevSubtitle} // 👈 Change this
-        onNext={nextSubtitle} // 👈 Change this
+        onPrev={prevSubtitle}
+        onNext={nextSubtitle}
       />
 
       <Subtitles subtitle={currentSubtitle} />
