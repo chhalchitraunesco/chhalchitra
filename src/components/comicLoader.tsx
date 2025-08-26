@@ -1,23 +1,52 @@
-import React from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import React from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
 
-function ComicLoader() {
+type ComicLoaderProps = {
+  imageSrc: string
+  onPrev: () => void; // This will now be prevSubtitle
+  onNext: () => void; // This will now be nextSubtitle
+}
+
+function ComicLoader({ imageSrc, onPrev, onNext }: ComicLoaderProps) {
   return (
-    <div className="w-3/4 flex items-center justify-center mx-auto" style={{ height: 'calc(100vh - 2rem)' }}>
+    <div
+      className="max-w-6xl flex items-center justify-center mx-auto"
+      style={{ height: "calc(100vh - 4rem)" }}
+    >
       <div className="flex items-center justify-center w-full h-full">
-        {/* Left Arrow */}
-        <button className="p-2  h-full flex items-center pointer-cursor">
-          <ChevronLeft size={32} className="text-gray-600" />
+        {/* Left Arrow now triggers subtitle navigation */}
+        <button
+          className="p-2 h-full flex items-center cursor-pointer transition-colors"
+          onClick={onPrev}
+        >
+          <ChevronLeft
+            size={32}
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          />
         </button>
-        
+
         {/* Image Container */}
-        <div className="flex-1 bg-gray-200 flex items-center justify-center h-full">
-          <div className="text-gray-500 text-lg">Image Placeholder</div>
+        <div className="flex-1 flex items-center justify-center h-full">
+          <Image
+            src={imageSrc}
+            alt="Comic Panel"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-full object-contain"
+          />
         </div>
-        
-        {/* Right Arrow */}
-        <button className="p-2 h-full flex items-center pointer-cursor">
-          <ChevronRight size={32} className="text-gray-600" />
+
+        {/* Right Arrow now triggers subtitle navigation */}
+        <button
+          className="p-2 h-full flex items-center cursor-pointer transition-colors"
+          onClick={onNext}
+        >
+          <ChevronRight
+            size={32}
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          />
         </button>
       </div>
     </div>

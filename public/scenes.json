@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "The Awakening",
+    "image_src": "/scenes/demo_panel.png",
+    "subtitles": [
+      {
+        "text": "The whispers of the past echoed in the empty streets."
+      },
+      {
+        "text": "A flicker of light appeared in the distance, a new hope."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "City of Glass",
+    "image_src": "/scenes/demo_panel2.png",
+    "subtitles": [
+      {
+        "text": "Beneath the neon glow, the city's secrets unfolded."
+      },
+      {
+        "text": "A lone figure walked through the crowded avenues, a ghost among the living."
+      },
+      {
+        "text": "The scent of ozone and wet pavement filled the air, a familiar perfume."
+      }
+    ]
+  }
+]
