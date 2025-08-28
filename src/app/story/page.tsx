@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ComicLoader from "@/components/comicLoader";
 import LogoHome from "@/components/logoHome";
 import Subtitles from "@/components/subtitles";
@@ -13,6 +13,7 @@ type Scene = {
   id: number;
   title: string;
   image_src: string;
+  audio: string; // added
   subtitles: Subtitle[];
 };
 
@@ -20,6 +21,7 @@ export default function Story() {
   const [scenes, setScenes] = useState<Scene[]>([]);
   const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState<number>(0);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Fetch scenes JSON
   useEffect(() => {
@@ -27,6 +29,22 @@ export default function Story() {
       .then((res) => res.json())
       .then((data: Scene[]) => setScenes(data));
   }, []);
+
+  // Handle scene change -> play its audio
+  useEffect(() => {
+    if (!scenes.length) return;
+
+    const currentScene = scenes[currentSceneIndex];
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = currentScene.audio;
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {
+        // autoplay may be blocked until user interacts
+        console.log("Audio playback blocked until user interaction");
+      });
+    }
+  }, [currentSceneIndex, scenes]);
 
   // Functions to handle navigation
   const nextScene = () => {
@@ -59,7 +77,7 @@ export default function Story() {
     }
   };
 
-  // Keyboard navigation logic
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") {
@@ -90,6 +108,9 @@ export default function Story() {
       />
 
       <Subtitles subtitle={currentSubtitle} />
+
+      {/* hidden audio element that updates per scene */}
+      <audio ref={audioRef} hidden loop />
 
       <div className="flex justify-center mt-4">
         <button

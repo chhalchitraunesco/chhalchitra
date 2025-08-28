@@ -3,6 +3,7 @@
     "id": 1,
     "title": "The Awakening",
     "image_src": "/scenes/demo_panel.png",
+    "audio": "/music/music1.mp3",
     "subtitles": [
       {
         "text": "The whispers of the past echoed in the empty streets."
@@ -16,6 +17,7 @@
     "id": 2,
     "title": "City of Glass",
     "image_src": "/scenes/demo_panel2.png",
+    "audio": "/music/music1.mp3",
     "subtitles": [
       {
         "text": "Beneath the neon glow, the city's secrets unfolded."
