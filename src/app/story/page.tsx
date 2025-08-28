@@ -13,15 +13,22 @@ type Scene = {
   id: number;
   title: string;
   image_src: string;
-  audio: string; // added
+  audio: string;
   subtitles: Subtitle[];
+  theme?: {
+    dim?: boolean;
+    fuzzy?: boolean;
+    lighting?: "soft" | "neon" | "candle";
+  };
 };
+
 
 export default function Story() {
   const [scenes, setScenes] = useState<Scene[]>([]);
   const [currentSceneIndex, setCurrentSceneIndex] = useState<number>(0);
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState<number>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  
 
   // Fetch scenes JSON
   useEffect(() => {

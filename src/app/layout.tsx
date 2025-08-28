@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Bebas_Neue } from "next/font/google";
+import { Roboto, Bebas_Neue, Montserrat, Oswald, Lato } from "next/font/google";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -7,6 +7,24 @@ const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
 });
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+})
+
+const lato = Lato({
+  variable: "--font-lato",
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+})
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -27,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bebasNeue.variable} ${roboto.variable} antialiased`}
+        className={`${bebasNeue.variable} ${roboto.variable} ${montserrat.variable} ${oswald.variable} ${lato.variable} font-sans antialiased`}
       >
         {children}
       </body>

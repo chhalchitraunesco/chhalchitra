@@ -43,6 +43,9 @@
   --radius-xl: calc(var(--radius) + 4px);
   --font-bebas-neue: var(--font-bebas-neue);
   --font-roboto: var(--font-roboto);
+  --font-montserrat: var(--font-montserrat);
+  --font-oswald: var(--font-oswald);
+  --font-lato: var(--font-lato);
 }
 
 :root {
