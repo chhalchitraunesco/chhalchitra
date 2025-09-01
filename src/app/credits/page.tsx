@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 type Credit = {
   name: string;
@@ -9,11 +9,22 @@ type Credit = {
 
 export default function Credits() {
   const [credits, setCredits] = useState<Credit[]>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     fetch("/credits.json")
       .then((res) => res.json())
       .then((data: Credit[]) => setCredits(data));
+  }, []);
+
+  // Play background music on mount
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.6; // optional: set softer volume
+      audioRef.current.play().catch(() => {
+        console.log("Autoplay blocked — user interaction required.");
+      });
+    }
   }, []);
 
   if (credits.length === 0) {
@@ -26,6 +37,9 @@ export default function Credits() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black text-white flex justify-center items-center font-montserrat">
+      {/* Background music */}
+      <audio ref={audioRef} src="/music/music1.mp3" autoPlay loop hidden />
+
       {/* Scrolling content */}
       <div className="animate-scroll-credits text-center space-y-8">
         {/* Project Title */}

@@ -1,6 +1,8 @@
 [
-  { "name": "Alice Johnson", "role": "Director" },
-  { "name": "Bob Smith", "role": "Writer" },
-  { "name": "Charlie Lee", "role": "Illustrator" },
-  { "name": "Dana Kim", "role": "Music Composer" }
+  { "name": "Suyog Prasai", "role": "Developer" },
+  { "name": "Bhanu Bhakta Banjade", "role": "Writer" },
+  { "name": "Bisika Pant", "role": "Illustrator" },
+  { "name": "Aadarsha Tiwari", "role": "Video Scripting" },
+  { "name": "Yagya Raj Bhatta", "role": "Illustrator" },
+  { "name": "Nischal Pandey", "role": "Documentation" }
 ]

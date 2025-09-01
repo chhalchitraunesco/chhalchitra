@@ -5,12 +5,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
+// Define a proper type for stars
+interface Star {
+  id: number;
+  x: number;
+  delay: number;
+  duration: number;
+  size: number;
+}
+
 function Start() {
   const router = useRouter();
-  const [stars, setStars] = useState<any[]>([]);
+  const [stars, setStars] = useState<Star[]>([]); // use Star[] instead of any[]
+  const [name, setName] = useState<string>("");
 
   useEffect(() => {
-    const generateStars = () =>
+    const generateStars = (): Star[] =>
       Array.from({ length: 20 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
@@ -22,7 +32,17 @@ function Start() {
     setStars(generateStars());
   }, []);
 
-  const goToPage = () => router.push("/story");
+  const goToPage = (): void => {
+    router.push("/story");
+  };
+
+  const createStory = (): void => {
+    if (!name.trim()) {
+      alert("Please enter your name first!");
+      return;
+    }
+    router.push(`/story?name=${encodeURIComponent(name)}`);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center flex-col bg-white text-black relative overflow-hidden">
@@ -57,22 +77,35 @@ function Start() {
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         className="relative z-10"
       >
-        <Image src="/logo.png" alt="start" width={300} height={300} />
+        <Image src="/logo.png" alt="start" width={200} height={200} />
       </motion.div>
 
-      {/* Start Button */}
-      <button
-        onClick={goToPage}
-        className="mt-4 px-10 py-4 text-4xl font-bebas-neue tracking-widest mb-18
-          border-4 border-black bg-white text-black 
-          shadow-[4px_4px_0_0_black] cursor-pointer
-          transition-all duration-200 
-          hover:bg-black hover:text-white hover:shadow-[6px_6px_0_0_black] 
-          active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
-          relative z-10"
-      >
-        START GAME
-      </button>
+      {/* Buttons */}
+      <div className="flex flex-col gap-6 mt-6 relative z-10">
+        <button
+          onClick={goToPage}
+          className="px-8 py-3 text-2xl font-bebas-neue tracking-widest
+            border-4 border-black bg-white text-black 
+            shadow-[4px_4px_0_0_black] cursor-pointer
+            transition-all duration-200 
+            hover:bg-black hover:text-white hover:shadow-[6px_6px_0_0_black] 
+            active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+        >
+          START STORY
+        </button>
+
+        <button
+          // onClick={createStory}
+          className="px-8 py-3 text-2xl font-bebas-neue tracking-widest
+            border-4 border-black bg-white text-black 
+            shadow-[4px_4px_0_0_black] cursor-pointer
+            transition-all duration-200 
+            hover:bg-black hover:text-white hover:shadow-[6px_6px_0_0_black] 
+            active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+        >
+          CREATE STORY
+        </button>
+      </div>
     </div>
   );
 }

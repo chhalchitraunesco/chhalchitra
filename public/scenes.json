@@ -1,33 +1,152 @@
 [
   {
     "id": 1,
-    "title": "The Awakening",
-    "image_src": "/scenes/demo_panel.png",
-    "audio": "/music/music1.mp3",
+    "title": "Flashback Scene 1 – The Rumor Spreads",
+    "image_src": "/scenes/1.png",
+    "audio": "/music/1.mp3",
     "subtitles": [
-      {
-        "text": "The whispers of the past echoed in the empty streets."
-      },
-      {
-        "text": "A flicker of light appeared in the distance, a new hope."
-      }
+      { "text": "Byapari: “Brothers and sisters, the world ends tomorrow!”" },
+      { "text": "Jhakri: “The spirits scream! Death comes on wings of fire!”" },
+      { "text": "Narration: 2012… whispers of the world’s end reached Chhalgaun." },
+      { "text": "Narration: Fear took root faster than truth could breathe." }
     ]
   },
   {
     "id": 2,
-    "title": "City of Glass",
-    "image_src": "/scenes/demo_panel2.png",
-    "audio": "/music/music1.mp3",
+    "title": "Flashback Scene 2 – Panic and Exploitation",
+    "image_src": "/scenes/2.png",
+    "audio": "",
     "subtitles": [
-      {
-        "text": "Beneath the neon glow, the city's secrets unfolded."
-      },
-      {
-        "text": "A lone figure walked through the crowded avenues, a ghost among the living."
-      },
-      {
-        "text": "The scent of ozone and wet pavement filled the air, a familiar perfume."
-      }
+      { "text": "Chhale: “Fifty years I’ve farmed this land… and now? What use is it when there’s no tomorrow?”" },
+      { "text": "Narration: They sold everything—land, homes, even hope." },
+      { "text": "Narration: And Byapari harvested their terror like crops from their fields." }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Flashback Scene 3 – The Longest Night",
+    "image_src": "/scenes/3.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Sarpanch: “No one leaves tomorrow—we will face fate with dignity!”" },
+      { "text": "Mardsab: “There is no evidence… only rumor!”" },
+      { "text": "Narration: December 21st—the night the village forgot reason." },
+      { "text": "Narration: Prayers rose louder than truth." }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Flashback Scene 4 – Dawn & Reckoning",
+    "image_src": "/scenes/4.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Sarpanch (angry): “You poisoned us with lies!”" },
+      { "text": "Mardsab: “We must never bow to fear again—only to truth.”" },
+      { "text": "Narration: The sun rose, and nothing had ended—except trust." },
+      { "text": "Narration: The false prophets were cast out." },
+      { "text": "Narration: The lesson remained: question before believing." }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Scene 1 – The Village Turns Digital",
+    "image_src": "/scenes/5.png",
+    "audio": "/music/3.mp3",
+    "subtitles": [
+      { "text": "“Once, stories lived in our voices… now they live in machines.”" },
+      { "text": "“Look, ChhalGPT just finished my homework!”" },
+      { "text": "“naROK even stopped our fight today—it’s like magic!”" },
+      { "text": "“Or like forgetting how to think.”" }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Scene 2 – The Boy’s Question",
+    "image_src": "/scenes/6.png",
+    "audio": "/music/2.mp3",
+    "subtitles": [
+      { "text": "Boy (whispering): “ChhalGPT… when will the world end?”" },
+      { "text": "Tablet (shimmering text): “December 21, 2032.”" },
+      { "text": "Boy (eyes wide): “…Papa… it says we’re all going to die.”" }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Scene 3 – Panic in Chhalgaun",
+    "image_src": "/scenes/7.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Mother: “Did you hear? The machine said the world ends!”" },
+      { "text": "Father: “I knew it… just like 2012!”" },
+      { "text": "Child clutching tablet: “naROK warned us. We have to prepare!”" },
+      { "text": "Background TV Ad (The Titans): “Your friend when the world ends… Buy salvation today.”" }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Scene 4 – Madsab’s Warning",
+    "image_src": "/scenes/8.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Madsab: “Stop! These machines don’t know the future. They only guess!”" },
+      { "text": "Girl (defiant): “But naROK knows everything. Why won’t you believe it?”" },
+      { "text": "Madsab (pleading): “Because I remember 2012. Lies, fear… nothing happened.”" },
+      { "text": "Student (dismissive): “You’re old, sir. You don’t understand.”" }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Scene 5 – The Week of Fear",
+    "image_src": "/scenes/9.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Villager 1: “This YouTuber says build bunkers!”" },
+      { "text": "Villager 2: “Look! Another says stock rice and salt!”" },
+      { "text": "Madsab (to himself): “They’re drowning… in lies.”" }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Scene 6 – December 22nd",
+    "image_src": "/scenes/10.png",
+    "audio": " ",
+    "subtitles": [
+      { "text": "Child (whispering): “…The sun… it rose.”" },
+      { "text": "Mother (ashamed): “So it was all… nothing?”" },
+      { "text": "Villager murmurs: “We were fooled again.”" }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Scene 7 – The Lesson",
+    "image_src": "/scenes/11.png",
+    "audio": "/music/3.mp3",
+    "subtitles": [
+      { "text": "Madsab: “This is what truth looks like when the machine doesn’t know. Silence.”" },
+      { "text": "Child (hesitant): “But… it sounded so real.”" },
+      { "text": "Madsab: “That’s why you must ask: Where did it come from? Can I see the source? Always ask for the citation.”" },
+      { "text": "Children (in unison, softly): “…Always ask for the citation.”" }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Scene 8 – A Clearer Tomorrow",
+    "image_src": "/scenes/12.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Child (smiling): “Papa, don’t believe everything the screen says.”" },
+      { "text": "Parent (chuckling): “Seems my teacher was right after all.”" },
+      { "text": "Madsab (watching, relieved): “At last… they are learning to see clearly.”" }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Closing Scene – Reflection",
+    "image_src": "/scenes/13.png",
+    "audio": "",
+    "subtitles": [
+      { "text": "Narration: The village survived fear twice—once by superstition, once by machine." },
+      { "text": "Narration: The future belonged not to rumors, but to reason." }
     ]
   }
 ]

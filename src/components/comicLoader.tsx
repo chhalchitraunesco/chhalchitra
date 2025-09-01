@@ -27,16 +27,17 @@ function ComicLoader({ imageSrc, onPrev, onNext }: ComicLoaderProps) {
         </button>
 
         {/* Image Container */}
-        <div className="flex-1 flex items-center justify-center h-full">
+        <div className="flex-1 flex items-center justify-center h-full overflow-auto">
           <Image
             src={imageSrc}
             alt="Comic Panel"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-full object-contain"
+            width={1200}   // intrinsic aspect ratio preserved
+            height={800}
+            className="object-contain min-w-[640px] min-h-[480px]"
+            priority
           />
         </div>
+
 
         {/* Right Arrow now triggers subtitle navigation */}
         <button
